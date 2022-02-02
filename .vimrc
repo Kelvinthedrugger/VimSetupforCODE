@@ -1,0 +1,24 @@
+" ' " '(quotation mark): means comment in vim script
+" change filename to .vimrc in Linux/macOS 
+
+" ref to source $VIMRUNTIME/.... on your machine 
+
+" @geohot
+syntax on
+set nobackup
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set ai
+set number
+set hlsearch
+set ruler
+highlight Comment ctermfg=green
+
+"start from last editing position
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+"color other than default
+colorscheme slate
+
+
