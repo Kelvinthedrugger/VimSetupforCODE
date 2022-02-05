@@ -15,6 +15,9 @@ set hlsearch
 set ruler
 highlight Comment ctermfg=green
 
+"i don't need .swp file
+set noswapfile
+
 "start from last editing position
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
