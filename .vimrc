@@ -24,4 +24,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 "color other than default
 colorscheme slate
 
+"provided feature in vim
+set foldmethod=indent
 
