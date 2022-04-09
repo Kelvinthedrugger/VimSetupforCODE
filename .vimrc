@@ -1,6 +1,5 @@
 " ' " '(quotation mark): means comment in vim script
 " change filename to .vimrc in Linux/macOS 
-
 " ref to source $VIMRUNTIME/.... on your machine 
 
 " @geohot
@@ -47,11 +46,45 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 
+"allowing backspace key
+set backspace=indent,eol,start  " more powerful backspacing
 
-" jeremy howard's tags for jumping around when browsing source code
-"set tags=./tags;,tags$HOME
-"set tags+=$HOME/site-packages/torch/tags
-"set tags+=$HOME/site-packages/torchvision/tags
+et ic " search non-case-sensitively
+
+
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-]> g<C-]>
+
+set mouse=a
+
+" Press Enter to highlight current word
+let g:highlighting = 0
+function! Highlighting()
+  if g:highlighting == 1 && @/ =~ '^\\<'.expand('<cword>').'\\>$'
+    let g:highlighting = 0
+    return ":silent nohlsearch\<CR>"
+  endif
+  let @/ = '\<'.expand('<cword>').'\>'
+  let g:highlighting = 1
+  return ":silent set hlsearch\<CR>"
+endfunction
+nnoremap <silent> <expr> <CR> Highlighting()
+
+" wildmenu for easier navigating
+set wildmenu
+
+"checkout ~/TOOLS
+set tags=./tags;,tags$HOME
+set tags+=$HOME/Documents/GitHub/Pytorch/torch/tags
+set tags+=$HOME/anaconda3/envs/fastAI/Lib/site-packages/fastai/tags
+
+
+" fold doc strings, not working if foldmethod is not activated
+let g:SimpylFold_docstring_preview=1
 
 
 
