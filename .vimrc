@@ -79,8 +79,8 @@ set wildmenu
 
 "checkout ~/TOOLS
 set tags=./tags;,tags$HOME
-set tags+=$HOME/Documents/GitHub/Pytorch/torch/tags
-set tags+=$HOME/anaconda3/envs/fastAI/Lib/site-packages/fastai/tags
+set tags+=$HOME/torch/tags
+set tags+=$HOME/fastai/tags
 
 
 " fold doc strings, not working if foldmethod is not activated
