@@ -49,9 +49,6 @@ autocmd BufWrite *.py :call DeleteTrailingWS()
 "allowing backspace key
 set backspace=indent,eol,start  " more powerful backspacing
 
-et ic " search non-case-sensitively
-
-
 "split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -77,14 +74,9 @@ nnoremap <silent> <expr> <CR> Highlighting()
 " wildmenu for easier navigating
 set wildmenu
 
-"checkout ~/TOOLS
 set tags=./tags;,tags$HOME
-set tags+=$HOME/torch/tags
-set tags+=$HOME/fastai/tags
-
 
 " fold doc strings, not working if foldmethod is not activated
 let g:SimpylFold_docstring_preview=1
-
 
 
