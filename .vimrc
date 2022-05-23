@@ -77,6 +77,6 @@ set wildmenu
 set tags=./tags;,tags$HOME
 
 " fold doc strings, not working if foldmethod is not activated
-let g:SimpylFold_docstring_preview=1
+let g:SimplyFold_docstring_preview=1
 
 
