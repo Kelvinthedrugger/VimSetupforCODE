@@ -5,8 +5,8 @@
 " @geohot
 syntax on
 set nobackup
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set ai
 set number
@@ -23,11 +23,11 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 "color other than default
 colorscheme slate
 
-"provided feature in vim
-augroup vimrc
-  au BufReadPre * setlocal foldmethod=indent
-  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-augroup END
+"fold: provided feature in vim
+"augroup vimrc
+"  au BufReadPre * setlocal foldmethod=indent
+"  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+"augroup END
 
 " vim setup from jserv's course
 " https://hackmd.io/@sysprog/gnu-linux-dev/https%3A%2F%2Fhackmd.io%2Fs%2FHJv9naEwl
@@ -74,9 +74,10 @@ nnoremap <silent> <expr> <CR> Highlighting()
 " wildmenu for easier navigating
 set wildmenu
 
-set tags=./tags;,tags$HOME
+" useful tag method, after creating tags -> uncomment this line
+"set tags=./tags;,tags$HOME
 
 " fold doc strings, not working if foldmethod is not activated
-let g:SimplyFold_docstring_preview=1
+"let g:SimplyFold_docstring_preview=1
 
 
