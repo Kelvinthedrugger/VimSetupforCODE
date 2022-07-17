@@ -34,7 +34,7 @@ colorscheme slate
 "set cursorline
 set enc=utf8
 "set relativenumber
-set ic " search non-case-sensitively
+"set ic " search non-case-sensitively
 
 
 " https://github.com/uranusjr/dotfiles/blob/master/files/vimrc#L267
@@ -45,6 +45,11 @@ func! DeleteTrailingWS()
   exe "normal `z"
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
+" did a bit more here
+autocmd BufWrite *.txt :call DeleteTrailingWS()
+autocmd BufWrite *.c :call DeleteTrailingWS()
+autocmd BufWrite *.cpp :call DeleteTrailingWS()
+
 
 "allowing backspace key
 set backspace=indent,eol,start  " more powerful backspacing
