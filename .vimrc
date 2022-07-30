@@ -44,11 +44,7 @@ func! DeleteTrailingWS()
   %s/\s\+$//ge
   exe "normal `z"
 endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-" did a bit more here
-autocmd BufWrite *.txt :call DeleteTrailingWS()
-autocmd BufWrite *.c :call DeleteTrailingWS()
-autocmd BufWrite *.cpp :call DeleteTrailingWS()
+autocmd BufWrite *.py, *.txt, *.c, *.cpp :call DeleteTrailingWS()
 
 
 "allowing backspace key
