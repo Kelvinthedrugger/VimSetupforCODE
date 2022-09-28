@@ -23,6 +23,21 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 "color other than default
 colorscheme slate
 
+"auto close brackets; kinda lame
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
+" [] also
+inoremap [      []<Left>
+inoremap [<CR>  [<CR>]<Esc>O
+inoremap [[     [
+inoremap []     []
+
+" auto indent? very smooth!
+" http://wiki.csie.ncku.edu.tw/vim/vimrc?printable
+filetype indent on
+
 "fold: provided feature in vim
 "augroup vimrc
 "  au BufReadPre * setlocal foldmethod=indent
@@ -34,8 +49,7 @@ colorscheme slate
 "set cursorline
 set enc=utf8
 "set relativenumber
-"set ic " search non-case-sensitively
-
+set ic " search non-case-sensitively
 
 " https://github.com/uranusjr/dotfiles/blob/master/files/vimrc#L267
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
