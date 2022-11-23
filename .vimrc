@@ -34,6 +34,14 @@ inoremap [<CR>  [<CR>]<Esc>O
 inoremap [[     [
 inoremap []     []
 
+" yep, use ()
+inoremap (      ()<Left>
+inoremap (<CR>  (<CR>)<Esc>O
+inoremap ((     (
+inoremap ()     ()
+
+
+
 " auto indent? very smooth!
 " http://wiki.csie.ncku.edu.tw/vim/vimrc?printable
 filetype indent on
