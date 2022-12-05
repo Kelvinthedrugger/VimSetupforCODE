@@ -44,7 +44,28 @@ inoremap ()     ()
 
 " auto indent? very smooth!
 " http://wiki.csie.ncku.edu.tw/vim/vimrc?printable
-filetype indent on
+" comment out filetype indent when using vundle
+" filetype indent on
+
+" uncomment these if you have vundle
+" vundle, i would say it's not particularly useful
+"set nocompatible " be iMproved, required
+"filetype off " required
+"" set the runtime path to include Vundle and initialize
+"set rtp+=$HOME/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"  Plugin 'preservim/nerdtree'
+"call vundle#end()
+"filetype plugin indent on " required
+"" end vundle
+"" simply map NERDTree to key bindings suits my use-case the most
+"nnoremap <C-F> :NERDTree<CR>
+
+" If another buffer tries to replace NERDTree, put it in the other window, and
+" bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 | 
+  \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
 
 "fold: provided feature in vim
 "augroup vimrc
