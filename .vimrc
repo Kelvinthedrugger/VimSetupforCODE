@@ -40,7 +40,10 @@ inoremap (<CR>  (<CR>)<Esc>O
 inoremap ((     (
 inoremap ()     ()
 
-
+" autocomplete dropdown list colorscheme
+" " https://hackmd.io/@sysprog/HJv9naEwl
+hi Pmenu ctermfg=0 ctermbg=7 
+hi PmenuSel ctermfg=7 ctermbg=4
 
 " auto indent? very smooth!
 " http://wiki.csie.ncku.edu.tw/vim/vimrc?printable
@@ -56,7 +59,7 @@ inoremap ()     ()
 "call vundle#begin()
 "  Plugin 'preservim/nerdtree'
 "call vundle#end()
-"filetype plugin indent on " required
+filetype plugin indent on " required
 "" end vundle
 "" simply map NERDTree to key bindings suits my use-case the most
 "nnoremap <C-F> :NERDTree<CR>
